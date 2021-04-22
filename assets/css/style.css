@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+}
+
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: #1b2021;
+    transition: 0.5s;
+    overflow: hidden;
+
+}
+
+.navigation.active{
+    width: 60px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.navigation ul li:hover{
+    background-color:#1b6ca8;
+}
+
+.navigation ul li:nth-child(1){
+    margin-bottom: 1.5rem;
+}
+
+.navigation ul li:nth-child(1):hover{
+    background: transparent;
+}
+
+.navigation ul li a{
+    color: #ffe268;
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 63px;
+    text-align: center;
+}
+
+.navigation ul li a .icon .fas{
+    color: #ffe268;
+    font-size: 1.2rem;
+    
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #1b2021;;
+    transition: 0.5s;
+}
+
+
+.main.active{
+    width: calc(100% - 60px);
+    left: 60px;
+
+}
+
+.main .topbar{
+    width: 100%;
+    background: #1b2021;
+    height: 60px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle{
+   position: relative;
+   width: 60px;
+   height: 60px;
+   background-color: #1b2021;
+   font-size: 1.7rem;
+   font-weight: 500;
+   cursor: pointer; 
+   text-align: left;
+   justify-content: center;
+}
+
+.toggle::before{
+    content: "\0205E";
+    /* font-family: fontAwesome; */
+    font-size: 2rem;
+    color: #ffe268;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+}
+
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;                                                                 
+}
+
+
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    outline: none;
+    border-style: none; 
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+.search label .fas{
+    position: absolute;
+    left: 15px;
+    top: 4px;
+    color: #ffe268;
+}
+
+.user{
+    position: relative;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.card{
+    position: relative;
+    background-color: #ffe268;
+    box-shadow: 0 0 3px #ffe268;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.card .numbers{
+    position: relative;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+
+.card .cardName{
+    color: #f8f5f1;
+}
+
+.card .iconBox{
+    color: #28b5b5;
+    font-size: 1.5rem;
+}
+
+.details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 1fr
+}
+
+.details .recentOrders{
+    position: relative;
+    min-height: 530px;
+    background-color: #f8ede3;
+    box-shadow: 0 0 5px #fff;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.details .cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2{
+    font-weight: 600;
+}
+
+.btn{
+    position: relative;
+    padding: 6px 20px;
+    background-color: #1b2021;
+    color: #ffe268;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.btn:hover{
+    background-color: #ffe268;
+    color: #1b2021;
+}
+
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details table thead{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.details .recentOrders table tr{
+    border-bottom: 1px solid #ffe268;
+}
+
+.details .recentOrders table tbody tr:last-child{
+    border-bottom: none;
+}
+
+.details .recentOrders table tr:hover{
+    background-color: #1b2021;
+    color: #ffe268;
+}
+
+.details .recentOrders table tr td{
+    padding: 9px 5px;
+}
+
+.details .recentOrders table thead tr td:last-child,
+.details .recentOrders table tbody tr td:last-child{
+    text-align: right;
+}
+
+.details .recentOrders table thead tr td:nth-child(3),
+.details .recentOrders table tbody tr td:nth-child(3){
+    text-align: center;
+}
+
+.status{
+    position: relative;
+    padding: 3px 7px;
+    background-color: #1b6ca8;
+    border-radius: 8px;
+    font-size: .8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.delivered{
+    background-color: green;
+}
+
+.pending{
+    background-color: #ff8303;
+}
+
+.inprogress{
+    background-color: #2978b5;
+}
+
+.return{
+    background-color: #fb3640;
+}
+
+
+.details .recentCustomers{
+    position: relative;
+    display: grid;
+    min-height: 530px;
+    background-color: #f8ede3;
+    box-shadow: 0 0 5px #fff;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+
+.recentCustomers .imageBox{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.recentCustomers .imageBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recentCustomers table tr:hover{
+    background-color: #1b2021;
+    color: #fff;
+}
+
+.recentCustomers table tr td {
+    padding: 7px 10px;
+}
+
+.recentCustomers table tr td h4{
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.recentCustomers table tr td span{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+
+@media (max-width: 992px){
+    .navigation{
+        left: -300px;
+    }
+    .navigation.active{
+        left: 0;
+        width: 300px;
+    }
+    .main{
+        width: 100%;
+        left: 0;
+    }
+    .main.active{
+        width: calc(100% - 300px);
+        left: 300px;
+    }
+    .cardBox{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 765px){
+    .details{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cardHeader h2{
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+
+}
+
+@media (max-width: 450px){
+
+    .navigation{
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .navigation.active{
+        width: 100%;
+        left: 0;
+    }
+
+    .toggle.active{
+        z-index: 10000;
+        right: 0;
+        left: initial;
+        position: fixed;
+        background-color: #1b2021;
+    }
+    .toggle.active::before{
+        color: #ffe268;
+    }
+
+    .cardBox{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .details .recentOrders{
+        overflow: auto;
+    }
+
+    .details .recentOrders table{
+        width: 600px;
+    }
+
+    .main,
+    .main.active{
+        width: 100%;
+        left: 0;
+    }
+
+}
+
+
+
